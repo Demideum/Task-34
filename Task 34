@@ -1,0 +1,45 @@
+namespace Task_34
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string userInput;
+
+            Dictionary<string, string> pronouns = new Dictionary<string, string>();
+            pronouns.Add("I", "Я");
+            pronouns.Add("You", "Ты");
+            pronouns.Add("He", "Он");
+            pronouns.Add("She", "Она");
+            pronouns.Add("It", "Оно");
+
+            Console.WriteLine($"\nПеревод личных местоимений.");
+
+            foreach (var pronoun in pronouns.Keys)
+            {
+                Console.WriteLine($"{pronoun}");
+            }
+            Console.WriteLine($"\nДля продолжения нажмите Ввод, для выхода #");
+
+            userInput = Console.ReadLine();
+
+            while (userInput != "#")
+            {
+                Console.WriteLine($"\nВведите местоимение для перевода или для выхода #");
+
+                userInput = Console.ReadLine();
+
+                if (userInput != "#" && pronouns.ContainsKey(userInput) == false)
+                {
+                    Console.WriteLine($"Проверьте правильность ввода.");
+                }
+
+                else if (userInput != "#")
+                {
+                    Console.WriteLine(pronouns[userInput]);
+                }
+            }
+            Console.WriteLine("Спасибо что были с нами! Ждем вас снова!");
+        }
+    }
+}
