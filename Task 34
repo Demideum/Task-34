@@ -26,18 +26,18 @@ namespace Task_34
                 Console.WriteLine($"\nВведите местоимение для перевода или для выхода #");
                 userInput = Console.ReadLine();
 
-                if (userInput != "#" && pronouns.ContainsKey(userInput) == true)
-                {
-                    Console.WriteLine(pronouns[userInput]);
-                }
-                else if (userInput != "#")
-                {
-                    Console.WriteLine($"Проверьте правильность ввода.");
-                }
-                else if (userInput == "#")
+                if (userInput == "#")
                 {
                     isWork = false;
                     Console.WriteLine("Спасибо что были с нами! Ждем вас снова!");
+                }
+                else if (pronouns.ContainsKey(userInput) == true)
+                {
+                    Console.WriteLine(pronouns[userInput]);
+                }
+                else 
+                {
+                    Console.WriteLine($"Проверьте правильность ввода.");
                 }
             }
         }
